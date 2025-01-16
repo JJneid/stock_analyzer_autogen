@@ -43,7 +43,7 @@ project/
 1. Ensure all environment variables are set in `.env`
 2. Run the script:
 ```python
-python main.py
+python stock_analyzer.py
 ```
 
 ## Functions
