@@ -157,8 +157,8 @@ def analyze_stock(ticker: str) -> dict:  # type: ignore[type-arg]
     plt.grid(True)
 
     # Save plot to file
-    os.makedirs("coding", exist_ok=True)
-    plot_file_path = f"coding/{ticker}_stockprice.png"
+    os.makedirs("results", exist_ok=True)
+    plot_file_path = f"results/{ticker}_stockprice.png"
     plt.savefig(plot_file_path)
     print(f"Plot saved as {plot_file_path}")
     result["plot_file_path"] = plot_file_path
@@ -169,7 +169,7 @@ def analyze_stock(ticker: str) -> dict:  # type: ignore[type-arg]
 
 def save_txt_tool(text: str, filename: str = "report.txt") -> str:
     """
-    Save text content to a file in the coding directory.
+    Save text content to a file in the results directory.
     
     Args:
         text (str): The content to save
@@ -179,15 +179,15 @@ def save_txt_tool(text: str, filename: str = "report.txt") -> str:
         str: Message confirming where the file was saved
     """
     try:
-        # Create coding directory if it doesn't exist
-        os.makedirs("coding", exist_ok=True)
+        # Create results directory if it doesn't exist
+        os.makedirs("results", exist_ok=True)
         
         # Add .txt extension if not present
         if not filename.endswith('.txt'):
             filename = f"{filename}.txt"
             
         # Create full filepath
-        filepath = os.path.join("coding", filename)
+        filepath = os.path.join("results", filename)
         
         # Write content to file
         with open(filepath, 'w', encoding='utf-8') as f:
